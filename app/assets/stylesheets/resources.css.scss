@@ -1,3 +1,25 @@
 // Place all the styles related to the Resources controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.well {
+	width: 220px;
+
+	h2 {
+		font-size: 1.5em;
+		margin: 0;
+
+		a:hover {
+			text-decoration: none;
+		}
+	}
+
+	.nav {
+		margin-top: 10px;
+		margin-bottom: 0;
+
+		li:first-child {
+			padding-left: 0;
+		}
+	}
+}

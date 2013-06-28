@@ -1,0 +1,9 @@
+<div class="well">
+<h2><%= link_to resource.title, resource.link %></h2>
+<%= resource.description %>
+<ul class="nav inline">
+<li><%= link_to 'Review', resource %></li>
+<li><%= link_to 'Refine', edit_resource_path(resource) %></li>
+<li><%= link_to 'Remove', resource, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+</ul>
+</div>
