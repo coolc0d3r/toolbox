@@ -1,6 +1,7 @@
 class ResourcesController < ApplicationController
-  # GET /resources
-  # GET /resources.json
+
+  before_filter :authenticate, except: :index
+
   def index
     @resources = Resource.all
 
@@ -10,8 +11,6 @@ class ResourcesController < ApplicationController
     end
   end
 
-  # GET /resources/1
-  # GET /resources/1.json
   def show
     @resource = Resource.find(params[:id])
 
@@ -21,8 +20,6 @@ class ResourcesController < ApplicationController
     end
   end
 
-  # GET /resources/new
-  # GET /resources/new.json
   def new
     @resource = Resource.new
 
@@ -32,13 +29,10 @@ class ResourcesController < ApplicationController
     end
   end
 
-  # GET /resources/1/edit
   def edit
     @resource = Resource.find(params[:id])
   end
 
-  # POST /resources
-  # POST /resources.json
   def create
     @resource = Resource.new(params[:resource])
 
@@ -53,8 +47,6 @@ class ResourcesController < ApplicationController
     end
   end
 
-  # PUT /resources/1
-  # PUT /resources/1.json
   def update
     @resource = Resource.find(params[:id])
 
@@ -69,8 +61,6 @@ class ResourcesController < ApplicationController
     end
   end
 
-  # DELETE /resources/1
-  # DELETE /resources/1.json
   def destroy
     @resource = Resource.find(params[:id])
     @resource.destroy
@@ -78,6 +68,14 @@ class ResourcesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to resources_url }
       format.json { head :no_content }
+    end
+  end
+
+  protected
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == ENV['HTTP_USER'] && password == ENV['HTTP_PASS']
     end
   end
 end

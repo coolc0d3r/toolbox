@@ -1,7 +1,11 @@
 Toolbox::Application.routes.draw do
+
   resources :resources
 
   root :to => "resources#index"
+
+  match 'about' => 'static_pages#about'
+  match 'faq' => 'static_pages#faq'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
