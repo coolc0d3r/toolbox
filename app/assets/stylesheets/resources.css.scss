@@ -4,6 +4,8 @@
 
 .well {
 	width: 220px;
+	float: left;
+	margin: 10px;
 
 	h2 {
 		font-size: 1.5em;
@@ -22,4 +24,10 @@
 			padding-left: 0;
 		}
 	}
+}
+
+.btn-new-resource {
+	clear: left;
+	float: left;
+	margin-top: 20px;
 }
