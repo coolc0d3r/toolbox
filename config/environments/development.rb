@@ -35,7 +35,4 @@ Toolbox::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  ENV['HTTP_USER'] = 'webdev'
-  ENV['HTTP_PASS'] = 'imatool'
-
 end
