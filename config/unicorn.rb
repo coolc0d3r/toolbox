@@ -1,10 +1,9 @@
 root = "/home/deployer/apps/toolbox/current"
-app_directory = "/home/deployer/apps/toolbox/current"
 working_directory root
 
-listen "#{root}/tmp/unicorn.toolbox.sock"
+listen "/tmp/unicorn.toolbox.sock"
 worker_processes 2
-timeout 60
+timeout 30
 
 preload_app true
 
