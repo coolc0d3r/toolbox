@@ -27,7 +27,7 @@ namespace :deploy do
 
   task :setup_config, roles: :app do
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
-    run "chmod +x #{current_path}/config/unicorn_init.sh"
+    run "chmod +x #{release_path}/config/unicorn_init.sh"
     sudo "ln -nfs #{release_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
     run "mkdir -p #{shared_path}/config"
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
