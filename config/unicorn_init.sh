@@ -59,10 +59,10 @@ cmd () {
 setup () {
     CONFIG=$1
  
-    if [ -z $APP_NAME ]; then
-        echo "App name is not defined in ${CONFIG}"
-        return 1
-    fi
+    # if [ -z $APP_NAME ]; then
+    #     echo "App name is not defined in ${CONFIG}"
+    #     return 1
+    # fi
     if [ -z $APP_USER ]; then
         echo "App name is not defined in ${CONFIG}"
         return 1
