@@ -35,9 +35,7 @@ Toolbox::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  unless Rails.env.production?
-    ENV['HTTP_USER'] = 'webdev'
-    ENV['HTTP_PASS'] = 'imatool'
-  end
+  ENV['HTTP_USER'] = 'webdev'
+  ENV['HTTP_PASS'] = 'imatool'
 
 end
