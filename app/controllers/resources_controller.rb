@@ -1,7 +1,5 @@
 class ResourcesController < ApplicationController
 
-  before_filter :authenticate, except: :index
-
   def index
     @resources = Resource.all
 
@@ -68,14 +66,6 @@ class ResourcesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to resources_url }
       format.json { head :no_content }
-    end
-  end
-
-  protected
-
-  def authenticate
-    authenticate_or_request_with_http_basic do |username, password|
-      username == 'webdev' && password == 'imatool2'
     end
   end
 end
